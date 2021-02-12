@@ -1,0 +1,9 @@
+.App {
+  background-color: #bbb;
+  margin: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.Login {
+  min-width: 500px;
+}
