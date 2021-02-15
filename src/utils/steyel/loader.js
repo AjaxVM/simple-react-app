@@ -26,7 +26,9 @@ function deepMerge(objA, objB) {
 }
 
 const defaultCssLoaderOptions = {
-  modules: true
+  modules: {
+    mode: 'pure'
+  }
 }
 
 function postProcessing(callback, classes, ...args) {

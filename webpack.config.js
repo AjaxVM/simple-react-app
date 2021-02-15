@@ -21,22 +21,10 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        oneOf: [
+        use: [
+          MiniCssExtractPlugin.loader,
           {
-            test: /\/components\//,
-            use: [
-              MiniCssExtractPlugin.loader,
-              {
-                loader: path.resolve('src/utils/steyel'),
-              },
-            ],
-          },
-          {
-            use: [
-              // 'style-loader',
-              MiniCssExtractPlugin.loader,
-              'css-loader',
-            ],
+            loader: path.resolve('src/utils/steyel'),
           },
         ],
       },
