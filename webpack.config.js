@@ -4,8 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-// const Steyel = require('./src/utils/steyel')
-
 const HtmlPartials = require('./src/html-partials/config.js')
 
 module.exports = {
@@ -23,9 +21,7 @@ module.exports = {
         test: /\.css$/i,
         use: [
           MiniCssExtractPlugin.loader,
-          {
-            loader: path.resolve('src/utils/steyel'),
-          },
+          'steyel-loader',
         ],
       },
     ]
