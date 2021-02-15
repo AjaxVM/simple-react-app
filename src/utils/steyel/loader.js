@@ -57,19 +57,19 @@ function postProcessing(callback, classes, ...args) {
   callback(argTarget, out, ...otherArgs)
 }
 
-module.exports = function (source) {  
+module.exports = function (source) {
   let out = source
   // find all classes
   const classes = extractCssClasses(out)
   
   // flag all base classes as ":local .class"
   for (const cls of classes.root) {
-    out = out.replaceAll(cls, `:local ${cls}`)
+    out = out.replace(new RegExp(cls, 'g'), `:local ${cls}`)
   }
   
   // flag all non-base classes as ":global(.class)"
   for (const cls of classes.other) {
-    out = out.replaceAll(cls, `:global(${cls})`)
+    out = out.replace(new RegExp(cls, 'g'), `:global(${cls})`)
   }
 
   // invoke css-loader with a separate query (to pass it options)
