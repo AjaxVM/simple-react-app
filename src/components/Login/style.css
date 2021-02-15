@@ -1,4 +1,9 @@
-.Login {
+.Login .foo {
   width: 200px;
   border: 1px solid black;
+}
+
+.Login .bar {
+  background-color: aliceblue;
+  width: 200px;
 }

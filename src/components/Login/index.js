@@ -1,16 +1,13 @@
 import React from 'react'
-import { Steyel } from '../../utils'
 
-import styles from './style.css'
-
-const style = new Steyel(styles)
+import style from './style.css'
 
 const Login = () => {
   return (
-    <div className={style.cls('Login')}>
-      <input type='text' placeholder='Username' />
+    <div className={style.Login}>
+      <input className={style.foo} type='text' placeholder='Username' />
       <br/>
-      <input type='button' value='Login' />
+      <input className='bar' type='button' value='Login' />
     </div>
   )
 }
